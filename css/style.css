@@ -559,7 +559,7 @@ body {
   top: 0;
   left: 0;
 
-  background: rgba(33, 150, 243, 0.9);
+  background-color: rgba(33, 150, 243, 0.9);
   color: var(--accent-color-text);
   font-weight: 400;
   font-size: 18px;
