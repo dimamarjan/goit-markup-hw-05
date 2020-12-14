@@ -200,9 +200,26 @@ body {
   margin-bottom: 20px;
 }
 
-.networks-links .social-link {
+.networks-links .address-social {
   background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+
   border-radius: 50%;
+  color: var(--svg-color);
+
+  transition: background-color var(--animation-timing),
+    color var(--animation-timing);
+}
+
+.networks-links .address-social:hover,
+.networks-links .address-social:focus {
+  background-color: var(--accent-color);
+  color: var(--accent-color-text);
 }
 
 /* --------------- Header and Footer end --------------- */
@@ -325,7 +342,32 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   display: flex;
+  height: 294px;
   justify-content: space-between;
+}
+
+.section .example-item {
+  position: relative;
+}
+
+.section .description {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  width: 370px;
+  height: 70px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--accent-color-text);
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(47, 48, 58, 0.8);
 }
 
 /* team section */
