@@ -408,7 +408,7 @@ body {
 }
 
 .card-item .headline,
-.card-item .description {
+.card-item .team-description {
   text-align: center;
 }
 
@@ -421,7 +421,7 @@ body {
   margin-bottom: 10px;
 }
 
-.team-section .description {
+.team-section .team-description {
   color: var(--secondary-text-color);
   font-weight: 400;
   font-size: 16px;
@@ -567,6 +567,9 @@ body {
   padding: 6px 22px;
   border-radius: 4px;
   cursor: pointer;
+
+  transition: color var(--animation-timing),
+    background-color var(--animation-timing), box-shadow var(--animation-timing);
 }
 
 .filter .radio-btn:hover,
@@ -598,6 +601,8 @@ body {
   min-height: 404px;
   border: 1px solid #eeeeee;
   position: relative;
+
+  transition: box-shadow var(--animation-timing);
 }
 
 .projects .item:not(:nth-child(3n)) {
