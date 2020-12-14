@@ -90,7 +90,8 @@ body {
   transition: color var(--animation-timing);
 }
 
-.navigation .link.border::after {
+.navigation .link.border::after,
+.navigation .link.border.current::after {
   position: absolute;
 
   content: "";
@@ -102,8 +103,15 @@ body {
 
   bottom: 0;
 
-  opacity: 0;
   transition: opacity var(--animation-timing);
+}
+
+.navigation .link.border::after {
+  opacity: 0;
+}
+
+.navigation .link.border.current::after {
+  opacity: 1;
 }
 
 .navigation .link.border:hover::after {
