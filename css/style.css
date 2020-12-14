@@ -10,6 +10,7 @@
   --buttons-bg: #f5f4fa;
   --main-font-family: Roboto, sans-serif;
   --main-logo-font: Raleway, sans-serif;
+  --animation-timing: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -69,13 +70,7 @@ body {
   margin: 0px;
   padding: 0px;
   list-style: none;
-  display: inline-flex;
-}
-
-.navigation .nav-item {
-  align-items: center;
-  display: inline-flex;
-  padding: 25px 0;
+  display: flex;
 }
 
 .navigation .contact-nav {
@@ -83,19 +78,48 @@ body {
 }
 
 .navigation .link {
+  position: relative;
   text-decoration: none;
   color: var(--navigation-text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  padding: 0;
+  padding: 25px 0;
+
+  transition: color var(--animation-timing);
+}
+
+.navigation .link.border::after {
+  position: absolute;
+
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+
+  bottom: 0;
+
+  opacity: 0;
+  transition: opacity var(--animation-timing);
+}
+
+.navigation .link.border:hover::after {
+  opacity: 1;
+}
+
+.navigation .nav-item:not(:last-child) {
+  margin-right: 50px;
 }
 
 .contact-nav .link {
   color: var(--secondary-text-color);
   display: flex;
   align-items: center;
+
+  transition: color var(--animation-timing);
 }
 
 .nav-item .nav-icon {
@@ -110,10 +134,6 @@ body {
 .contact-nav .link:hover,
 .contact-nav .link:focus {
   color: var(--accent-color);
-}
-
-.navigation .nav-item:not(:last-child) {
-  margin-right: 50px;
 }
 
 /* adress */
@@ -378,13 +398,20 @@ body {
 }
 
 .social-networks .social-link {
+  position: relative;
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 44px;
   height: 44px;
+
+  background-color: transparent;
+  border-radius: 50%;
   color: var(--svg-color);
+
+  transition: background-color var(--animation-timing),
+    color var(--animation-timing);
 }
 
 .social-networks .item:not(:last-child) {
@@ -395,7 +422,6 @@ body {
 .social-networks .social-link:focus {
   background-color: var(--accent-color);
   color: var(--accent-color-text);
-  border-radius: 50px;
 }
 
 .social-networks .social-icon {
@@ -436,13 +462,15 @@ body {
   height: 90px;
   border: 1px solid var(--svg-color);
   border-radius: 4px;
+
+  transition: color var(--animation-timing),
+    border-color var(--animation-timing);
 }
 
 .clients-logo .link:hover,
 .clients-logo .link:focus {
   color: var(--accent-color);
-  border: 1px solid var(--accent-color);
-  border-radius: 4px;
+  border-color: var(--accent-color);
 }
 
 .clients-logo .logo-icon {
@@ -568,7 +596,7 @@ body {
   padding: 63px 24px;
 
   transform: translateY(101%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--animation-timing);
 }
 
 .filter-item:hover .image-text,
