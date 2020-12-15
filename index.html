@@ -69,9 +69,10 @@
           <h1 class="hero-title">
             ЭФФЕКТИВНЫЕ РЕШЕНИЯ<br />ДЛЯ ВАШЕГО БИЗНЕСА
           </h1>
-          <a href="#" class="button">Заказать услугу</a>
+          <button data-modal-open type="button" class="hero-btn">
+            Заказать услугу
+          </button>
         </div>
-        <div class="modal"></div>
       </section>
 
       <!-- skills company -->
@@ -449,5 +450,16 @@
         </div>
       </address>
     </footer>
+
+    <div data-modal class="backdrop is-hidden">
+      <div class="modal">
+        <button data-modal-close type="button" class="close-btn">
+          <svg class="close-icon" width="28px" height="28px">
+            <use href="./images/symbol-defs.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
